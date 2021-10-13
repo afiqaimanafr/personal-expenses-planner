@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import './widgets/transaction_list.dart';
 
 const primaryColor = Color(0xFFAA00FF);
 
@@ -40,41 +39,6 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(
-            margin: EdgeInsets.all(10),
-            elevation: 5,
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: <Widget>[
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Title'),
-                    controller: titleController,
-                    // onChanged: (val) {
-                    //   titleInput = val;
-                    // },
-                  ),
-                  TextField(
-                    decoration: InputDecoration(labelText: 'Amount'),
-                    controller: amountController,
-                    // onChanged: (val) {
-                    //   amountInput = val;
-                    // },
-                  ),
-                  FlatButton(
-                    onPressed: () {
-                      print(titleController.text);
-                      print(amountController.text);
-                    },
-                    child: Text('Add Transaction'),
-                    textColor: Colors.purple,
-                  ),
-                ],
-              ),
-            ),
-          ),
-          TransactionList()
         ],
       ),
     );
