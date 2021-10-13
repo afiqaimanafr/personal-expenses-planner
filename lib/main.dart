@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import './widgets/transaction_list.dart';
 
+const primaryColor = Color(0xFFAA00FF);
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -23,6 +25,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: primaryColor,
         title: Text('Personal Expenses Planner'),
       ),
       body: Column(
@@ -32,7 +35,7 @@ class MyHomePage extends StatelessWidget {
           Container(
             width: double.infinity,
             child: Card(
-              color: Colors.blue,
+              color: Colors.purple,
               child: Text('Chart'),
               elevation: 5,
             ),
