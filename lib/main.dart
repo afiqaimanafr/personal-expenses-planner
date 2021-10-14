@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import './widgets/user_transaction.dart';
 
 const primaryColor = Color(0xFFAA00FF);
 
@@ -27,19 +28,22 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: primaryColor,
         title: Text('Personal Expenses Planner'),
       ),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            width: double.infinity,
-            child: Card(
-              color: Colors.purple,
-              child: Text('Chart'),
-              elevation: 5,
+      body: SingleChildScrollView(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              width: double.infinity,
+              child: Card(
+                color: Colors.purple,
+                child: Text('Chart'),
+                elevation: 5,
+              ),
             ),
-          ),
-        ],
+            UserTransactions()
+          ],
+        ),
       ),
     );
   }
