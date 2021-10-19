@@ -14,7 +14,7 @@ class _NewTransactionState extends State<NewTransaction> {
 
   final amountController = TextEditingController();
 
-  void submitData() {
+  void _submitData() {
     final enteredTitle = titleController.text;
     final enteredAmount = double.parse(amountController.text);
 
@@ -43,7 +43,7 @@ class _NewTransactionState extends State<NewTransaction> {
             TextField(
               decoration: InputDecoration(labelText: 'Title'),
               controller: titleController,
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => _submitData,
               // onChanged: (val) {
               //   titleInput = val;
               // },
@@ -52,15 +52,34 @@ class _NewTransactionState extends State<NewTransaction> {
               decoration: InputDecoration(labelText: 'Amount'),
               controller: amountController,
               keyboardType: TextInputType.number,
-              onSubmitted: (_) => submitData,
+              onSubmitted: (_) => _submitData,
               // onChanged: (val) {
               //   amountInput = val;
               // },
             ),
-            FlatButton(
-              onPressed: submitData,
+            Container(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  Text('No Date Chosen!'),
+                  FlatButton(
+                    textColor: Theme.of(context).primaryColor,
+                    onPressed: () {},
+                    child: Text(
+                      'Choose Date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            RaisedButton(
+              onPressed: _submitData,
+              textColor: Theme.of(context).textTheme.button.color,
               child: Text('Add Transaction'),
-              textColor: Theme.of(context).primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           ],
         ),
