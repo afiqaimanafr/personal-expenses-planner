@@ -58,7 +58,7 @@ class _NewTransactionState extends State<NewTransaction> {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(10),
-      elevation: 5,
+      elevation: 6,
       child: Container(
         padding: EdgeInsets.all(10),
         child: Column(
